@@ -1,0 +1,16 @@
+name: Update blog on commit
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+jobs:
+    build:
+        run-on: python:3.8-slim-buster
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: update blog on commit
+                run: |
+                docker run --rm -it -v ${{ github.workspace }}:/app --name blog wisehackermonkey/blog-updater:latest

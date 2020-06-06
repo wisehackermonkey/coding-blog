@@ -23,6 +23,11 @@ docker run --rm -it -v ${PWD}:/app --name blog wisehackermonkey/blog-updater:lat
 
 ```
 
+# Publish
+```
+docker login
+docker push wisehackermonkey/blog-updater:latest
+```
 
 # TODO
 - docker container
