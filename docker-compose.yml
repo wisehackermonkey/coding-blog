@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  codingblog:
+    image: codingblog
+    build:
+      context: .
+      dockerfile: Dockerfile

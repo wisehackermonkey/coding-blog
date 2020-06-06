@@ -25,6 +25,7 @@ def formated_date(d):
 
 
 if __name__ == "__main__":
+    print("starting")
     results = requests.get(f"https://api.github.com/users/{github_username}/repos?per_page=100")
 
     json_results = json.loads(results.text)
