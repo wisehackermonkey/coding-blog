@@ -8,6 +8,8 @@
 import requests
 import json
 from markdown import markdown
+from markdown import markdown
+
 from dateutil.parser import *
 
 github_username = "wisehackermonkey"  # thats me! wooh!
@@ -26,7 +28,8 @@ if __name__ == "__main__":
     results = requests.get(f"https://api.github.com/users/{github_username}/repos?per_page=100")
 
     json_results = json.loads(results.text)
-    html_data = markdown(open("./header.md").read())
+    header_text = open("./header.md").read()
+    html_data = markdown(header_text,extensions=['pymdownx.superfences'])
     for repo in json_results[0:-1]:
         if repo["has_pages"] == True:
             repo_name =         repo["name"]
@@ -47,6 +50,7 @@ if __name__ == "__main__":
 ```
 ---------------
     """
-            html_data += markdown(post_text)
+            html_data += markdown(post_text,extensions=['pymdownx.superfences'])
     with open("./index.html","w") as f:
         f.write(html_data)
+        print("finished")
