@@ -29,6 +29,12 @@ docker login
 docker push wisehackermonkey/blog-updater:latest
 ```
 
+
+# Scratch pad
+```
+# sudo docker run -v ${{ github.workspace }}:/app  wisehackermonkey/blog-updater:latest
+
+```
 # TODO
 - docker container
     - pass github username as docker env variable

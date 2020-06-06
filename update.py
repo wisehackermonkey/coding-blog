@@ -52,6 +52,6 @@ if __name__ == "__main__":
 ---------------
     """
             html_data += markdown(post_text,extensions=['pymdownx.superfences'])
-    with open("./index.html","w") as f:
+    with open("index.html","w") as f:
         f.write(html_data)
         print("finished")

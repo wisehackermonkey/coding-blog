@@ -11,8 +11,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
     - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
       run: |
-        docker run -v ${{ github.workspace }}:/app  wisehackermonkey/blog-updater:latest
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: update index.html file with latest blog post from repos
+      run: |
+        # 
+        python ./update.py
