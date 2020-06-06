@@ -1,16 +1,18 @@
 name: Update blog on commit
 
 on:
-    push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
-jobs:
-    build:
-        run-on: python:3.8-slim-buster
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
-        steps:
-            - uses: actions/checkout@v2
-            - name: update blog on commit
-                run: |
-                    docker run --rm -it -v ${{ github.workspace }}:/app --name blog wisehackermonkey/blog-updater:latest
+jobs:
+  build:
+
+    runs-on: python:3.8-slim-buster
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run -v ${{ github.workspace }}:/app  wisehackermonkey/blog-updater:latest
