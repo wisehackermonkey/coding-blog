@@ -24,5 +24,5 @@ jobs:
         pip install -r requirements.txt
     - name: update index.html file with latest blog post from repos
       run: |
-        # 
+        # update the index.html
         python ./update.py
