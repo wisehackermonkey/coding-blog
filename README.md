@@ -1,6 +1,7 @@
 # coding-blog
 coding adventures with oran: a central place for all my coding writeups found in repo's readme's    
 
+# [Live link to website]( https://wisehackermonkey.github.io/coding-blog/)
 
 # install 
 ```
