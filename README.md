@@ -36,7 +36,7 @@ docker push wisehackermonkey/blog-updater:latest
 
 ```
 # TODO
-- docker container
-    - pass github username as docker env variable
-- build github action
-    - trigger github action on commit from other OR change from repo    
+- ~~docker container
+    - ~~pass github username as docker env variable
+- ~~build github action
+    - ~~trigger github action on commit from other OR change from repo    
