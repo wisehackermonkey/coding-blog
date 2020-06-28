@@ -41,3 +41,4 @@ docker push wisehackermonkey/blog-updater:latest
     - ~~pass github username as docker env variable
 - ~~build github action
     - ~~trigger github action on commit from other OR change from repo    
+- convert to jekkle version using markdown for easy updating (using /docs/ folder_)
